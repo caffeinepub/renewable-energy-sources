@@ -1,0 +1,161 @@
+{
+  "kind": "build_request",
+  "title": "Simplify renewable energy page text and add a biofuels process diagram",
+  "projectName": "Renewable Energy Sources",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Rewrite/simplify all explanatory paragraphs on the Hydropower & Tidal page (frontend/src/pages/HydropowerTidalPage.tsx) to a lower high school reading level while preserving the original meaning and keeping all existing headings and section structure unchanged.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "simplify the paragraphs that are on the hydropower and tidal page... to a lower high school level."
+        ]
+      },
+      "acceptanceCriteria": [
+        "All paragraph text on the Hydropower & Tidal page reads at a lower high school level (simpler vocabulary, shorter sentences).",
+        "No headings (h1/h2/h3 titles) are changed.",
+        "The existing hydropower/tidal diagram component remains present and renders as before."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Rewrite/simplify all explanatory paragraphs on the Wind Energy page (frontend/src/pages/WindEnergyPage.tsx) to a lower high school reading level while preserving the original meaning and keeping all existing headings and section structure unchanged.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "simplify the paragraphs that are on... the wind energy page... to a lower high school level."
+        ]
+      },
+      "acceptanceCriteria": [
+        "All paragraph text on the Wind Energy page reads at a lower high school level.",
+        "No headings are changed.",
+        "The existing wind turbine diagram remains present and renders as before."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Rewrite/simplify all explanatory paragraphs on the Geothermal Energy page (frontend/src/pages/GeothermalEnergyPage.tsx) to a lower high school reading level while preserving the original meaning and keeping all existing headings and section structure unchanged.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "simplify the paragraphs that are on... the geothermal page... to a lower high school level."
+        ]
+      },
+      "acceptanceCriteria": [
+        "All paragraph text on the Geothermal Energy page reads at a lower high school level.",
+        "No headings are changed.",
+        "The existing geothermal diagram remains present and renders as before."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Rewrite/simplify all explanatory paragraphs on the Biomass Energy page (frontend/src/pages/BiomassEnergyPage.tsx) to a lower high school reading level while preserving the original meaning and keeping all existing headings and section structure unchanged.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "simplify the paragraphs that are on... the biomass page... to a lower high school level."
+        ]
+      },
+      "acceptanceCriteria": [
+        "All paragraph text on the Biomass Energy page reads at a lower high school level.",
+        "No headings are changed.",
+        "The existing biomass process diagram remains present and renders as before."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Rewrite/simplify all explanatory paragraphs on the Biofuels page (frontend/src/pages/BiofuelsPage.tsx) to a lower high school reading level while preserving the original meaning and keeping all existing headings and section structure unchanged.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "simplify the paragraphs that are on... the biofuels page... to a lower high school level."
+        ]
+      },
+      "acceptanceCriteria": [
+        "All paragraph text on the Biofuels page reads at a lower high school level.",
+        "No headings are changed.",
+        "The Biofuels page still covers the same topics (what biofuels are, ethanol steps, biodiesel steps, and uses) with the same overall section structure."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Add a new Biofuels process diagram component (similar in style and structure to the existing SVG diagram components) and render it at the bottom of the Biofuels page content.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "Also add a diagram of how the biofuel process works just like you did for all the other pages."
+        ]
+      },
+      "acceptanceCriteria": [
+        "A new diagram component exists under frontend/src/components/diagrams/ (e.g., BiofuelsProcessDiagram.tsx) and uses the same overall styling pattern as the other diagrams (card-like wrapper, title, SVG with accessibility labels).",
+        "The Biofuels page renders the diagram at the bottom of the page (after the existing content sections), using the existing pattern: a `div` with `className=\"not-prose my-8\"`.",
+        "The diagram includes accessible SVG labeling (role=\"img\" and aria-labelledby with <title> and <desc>) similar to other diagrams.",
+        "The app builds successfully with the new component and import."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Simplify user-facing paragraph text on the Sources page (frontend/src/pages/SourcesPage.tsx) to a lower high school reading level without changing any source titles or URLs.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "simplify the paragraphs that are on... the sources page to a lower high school level."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The main intro paragraph and the 'About These Sources' paragraph read at a lower high school level.",
+        "The per-source descriptions (the `description` fields) are simplified while preserving meaning.",
+        "All source titles and URLs remain exactly the same strings as before.",
+        "Page layout/components and link behavior remain unchanged."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend files listed as immutable by the platform (e.g., frontend/src/hooks/useInternetIdentity.ts(x), frontend/src/hooks/useActor.ts, frontend/src/main.tsx, and frontend/src/components/ui/*) must not be edited.",
+    "Do not change Sources page URLs or source titles; only simplify descriptive text.",
+    "Keep existing headings (h1/h2/h3 text) unchanged on the specified pages; only rewrite paragraph/description content.",
+    "No backend changes are required for these content/diagram updates (Motoko actor should remain untouched unless a strictly necessary bug is discovered)."
+  ],
+  "nonGoals": [
+    "Do not add new renewable energy topics or new routes/navigation items.",
+    "Do not change the overall page layouts, section ordering, or remove existing diagrams from other pages.",
+    "Do not implement any new backend storage, admin editing tools, or authentication changes."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Simplify renewable energy page text and add a biofuels process diagram",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Simplify Hydropower & Tidal page paragraphs to a lower high school reading level without changing headings/structure or the existing diagram.",
+      "acceptanceCriteria": [
+        "All paragraph text on the Hydropower & Tidal page reads at a lower high school level (simpler vocabulary, shorter sentences).",
+        "No headings (h1/h2/h3 titles) are changed.",
+        "The existing hydropower/tidal diagram component remains present and renders as before."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HydropowerTidalPage.tsx",
+          "operation": "modify",
+          "description": "Rewrite/simplify only the explanatory paragraph text (including the lead paragraph) while preserving meaning; keep all existing headings and section structure unchanged; do not remove or alter the existing WaterTurbineGeneratorDiagram render."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Simplify Wind Energy page paragraphs to a lower high school reading level without changing headings/structure or the existing diagram.",
+      "acceptanceCriteria": [
+        "All paragraph text on the Wind Energy page reads at a lower high school level.",
+        "No headings are changed.",
+        "The existing wind turbine diagram remains present and renders as before."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/WindEnergyPage.tsx",
+          "operation": "modify",
+          "description": "Rewrite/simplify only the explanatory paragraph text (including the lead paragraph) while preserving meaning; keep all existing headings and section structure unchanged; do not remove or alter the existing WindTurbineDiagram render."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Simplify Geothermal Energy page paragraphs to a lower high school reading level without changing headings/structure or the existing diagram.",
+      "acceptanceCriteria": [
+        "All paragraph text on the Geothermal Energy page reads at a lower high school reading level.",
+        "No headings are changed.",
+        "The existing geothermal diagram remains present and renders as before."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/GeothermalEnergyPage.tsx",
+          "operation": "modify",
+          "description": "Rewrite/simplify only the explanatory paragraph text (including the lead paragraph) while preserving meaning; keep all existing headings and section structure unchanged; do not remove or alter the existing GeothermalDiagram render."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Simplify Biomass Energy page paragraphs to a lower high school reading level without changing headings/structure or the existing diagram.",
+      "acceptanceCriteria": [
+        "All paragraph text on the Biomass Energy page reads at a lower high school reading level.",
+        "No headings are changed.",
+        "The existing biomass process diagram remains present and renders as before."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/BiomassEnergyPage.tsx",
+          "operation": "modify",
+          "description": "Rewrite/simplify only the explanatory paragraph text (including the lead paragraph) while preserving meaning; keep all existing headings and section structure unchanged; do not remove or alter the existing BiomassProcessDiagram render."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Simplify Biofuels page explanatory paragraphs to a lower high school reading level while preserving meaning and existing section structure.",
+      "acceptanceCriteria": [
+        "All paragraph text on the Biofuels page reads at a lower high school reading level.",
+        "No headings are changed.",
+        "The Biofuels page still covers the same topics (what biofuels are, ethanol steps, biodiesel steps, and uses) with the same overall section structure."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/BiofuelsPage.tsx",
+          "operation": "modify",
+          "description": "Rewrite/simplify only the explanatory paragraph text (including the lead paragraph) while preserving meaning; keep all existing headings and section structure unchanged; ensure topic coverage remains the same."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Create and render a new Biofuels process diagram component at the bottom of the Biofuels page using the existing diagram styling/accessibility pattern.",
+      "acceptanceCriteria": [
+        "A new diagram component exists under frontend/src/components/diagrams/ (e.g., BiofuelsProcessDiagram.tsx) and uses the same overall styling pattern as the other diagrams (card-like wrapper, title, SVG with accessibility labels).",
+        "The Biofuels page renders the diagram at the bottom of the page (after the existing content sections), using the existing pattern: a `div` with `className=\"not-prose my-8\"`.",
+        "The diagram includes accessible SVG labeling (role=\"img\" and aria-labelledby with <title> and <desc>) similar to other diagrams.",
+        "The app builds successfully with the new component and import."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/diagrams/BiofuelsProcessDiagram.tsx",
+          "operation": "create",
+          "description": "Add a new SVG-based Biofuels process diagram component following the existing diagram components’ pattern (card-like wrapper, centered title, consistent color/stroke styling, and accessible SVG labeling with role=\"img\" and aria-labelledby + <title>/<desc>)."
+        },
+        {
+          "path": "frontend/src/pages/BiofuelsPage.tsx",
+          "operation": "modify",
+          "description": "Import and render the new BiofuelsProcessDiagram at the bottom of the page content (after the existing sections) inside a `div` using the existing diagram wrapper pattern: className=\"not-prose my-8\"."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Simplify Sources page user-facing descriptive text while keeping all source titles and URLs exactly unchanged.",
+      "acceptanceCriteria": [
+        "The main intro paragraph and the 'About These Sources' paragraph read at a lower high school reading level.",
+        "The per-source descriptions (the `description` fields) are simplified while preserving meaning.",
+        "All source titles and URLs remain exactly the same strings as before.",
+        "Page layout/components and link behavior remain unchanged."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/SourcesPage.tsx",
+          "operation": "modify",
+          "description": "Rewrite/simplify the header intro paragraph, each source item `description` string, and the 'About These Sources' paragraph to a lower high school level while preserving meaning; keep all `title` and `url` strings exactly unchanged; do not change layout, components, or link behavior."
+        }
+      ]
+    }
+  ]
+}

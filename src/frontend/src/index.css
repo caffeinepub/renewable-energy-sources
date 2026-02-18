@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.5rem;
+        
+        /* Earth-tone color palette - Light mode */
+        --background: 0.98 0.01 100;
+        --foreground: 0.25 0.02 120;
+        --card: 1 0 0;
+        --card-foreground: 0.25 0.02 120;
+        --popover: 1 0 0;
+        --popover-foreground: 0.25 0.02 120;
+        --primary: 0.45 0.12 150;
+        --primary-foreground: 0.98 0.01 100;
+        --secondary: 0.55 0.08 80;
+        --secondary-foreground: 0.98 0.01 100;
+        --muted: 0.92 0.02 100;
+        --muted-foreground: 0.50 0.03 120;
+        --accent: 0.65 0.15 180;
+        --accent-foreground: 0.98 0.01 100;
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.98 0.01 100;
+        --border: 0.88 0.02 100;
+        --input: 0.88 0.02 100;
+        --ring: 0.45 0.12 150;
+        
+        /* Custom earth-tone colors */
+        --earth-green: 0.45 0.12 150;
+        --earth-teal: 0.55 0.12 180;
+        --earth-blue: 0.55 0.15 220;
+        --earth-brown: 0.45 0.08 60;
+        --earth-coral: 0.65 0.18 30;
+        --earth-sage: 0.65 0.08 140;
+    }
+
+    .dark {
+        --background: 0.18 0.02 120;
+        --foreground: 0.95 0.01 100;
+        --card: 0.22 0.02 120;
+        --card-foreground: 0.95 0.01 100;
+        --popover: 0.22 0.02 120;
+        --popover-foreground: 0.95 0.01 100;
+        --primary: 0.65 0.15 160;
+        --primary-foreground: 0.18 0.02 120;
+        --secondary: 0.35 0.08 140;
+        --secondary-foreground: 0.95 0.01 100;
+        --muted: 0.30 0.03 120;
+        --muted-foreground: 0.70 0.02 100;
+        --accent: 0.45 0.12 180;
+        --accent-foreground: 0.95 0.01 100;
+        --destructive: 0.50 0.20 25;
+        --destructive-foreground: 0.95 0.01 100;
+        --border: 0.30 0.03 120;
+        --input: 0.30 0.03 120;
+        --ring: 0.65 0.15 160;
+        
+        /* Custom earth-tone colors - Dark mode */
+        --earth-green: 0.55 0.12 150;
+        --earth-teal: 0.60 0.12 180;
+        --earth-blue: 0.60 0.15 220;
+        --earth-brown: 0.50 0.08 60;
+        --earth-coral: 0.70 0.18 30;
+        --earth-sage: 0.70 0.08 140;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+    
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    /* Custom utility classes for earth tones */
+    .text-earth-green {
+        color: oklch(var(--earth-green));
+    }
+    
+    .bg-earth-green {
+        background-color: oklch(var(--earth-green));
+    }
+    
+    .text-earth-teal {
+        color: oklch(var(--earth-teal));
+    }
+    
+    .bg-earth-teal {
+        background-color: oklch(var(--earth-teal));
+    }
+    
+    .text-earth-coral {
+        color: oklch(var(--earth-coral));
+    }
+    
+    .fill-earth-coral {
+        fill: oklch(var(--earth-coral));
+    }
+}
+
+/* Typography improvements for readability */
+@layer base {
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-semibold tracking-tight;
+    }
+    
+    p {
+        @apply leading-7;
+    }
+    
+    /* Prose styling for content pages */
+    .prose {
+        @apply max-w-none;
+    }
+    
+    .prose h1 {
+        @apply mb-6 mt-0;
+    }
+    
+    .prose h2 {
+        @apply mb-4 mt-10;
+    }
+    
+    .prose h3 {
+        @apply mb-3 mt-8;
+    }
+    
+    .prose p {
+        @apply mb-4;
+    }
+}

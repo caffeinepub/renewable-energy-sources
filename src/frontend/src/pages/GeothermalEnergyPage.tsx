@@ -1,44 +1,53 @@
 import { GeothermalDiagram } from '@/components/diagrams/GeothermalDiagram';
 
 /**
- * GeothermalEnergyPage explains how heat from Earth's interior
- * is used to generate electricity through geothermal power plants.
+ * GeothermalEnergyPage describes geothermal energy with simplified high-school-level
+ * paragraphs and includes the labeled underground heat diagram with dark mode support.
  */
 export default function GeothermalEnergyPage() {
   return (
     <div className="container py-12">
       <article className="prose prose-lg mx-auto max-w-4xl dark:prose-invert">
-        <h1 className="text-4xl font-bold tracking-tight">Geothermal Energy</h1>
+        <h1 className="text-4xl font-bold tracking-tight text-foreground">Geothermal Energy</h1>
         <p className="lead text-muted-foreground">
-          Tapping into Earth's internal heat to produce clean, reliable electricity.
+          Tapping into Earth's internal heat to generate clean, reliable electricity and heating.
         </p>
 
         <section className="mt-8">
-          <h2 className="text-3xl font-semibold">Understanding Geothermal Energy</h2>
+          <h2 className="text-3xl font-semibold text-foreground">What is Geothermal Energy?</h2>
           
-          <h3 className="text-2xl font-medium">What is Geothermal Energy?</h3>
-          <p>
-            Geothermal energy is heat energy from deep inside the Earth. "Geo" means Earth, and "thermal" means heat. This renewable energy uses natural heat stored under Earth's surface to make electricity and provide heating. Unlike solar or wind energy, geothermal energy works 24 hours a day, 365 days a year. This makes it a very reliable power source that doesn't depend on weather.
+          <p className="text-foreground/90">
+            Geothermal energy comes from heat inside the Earth. The word "geothermal" means "Earth heat."
+            Deep underground, the Earth is very hot. This heat comes from the Earth's core, which is as hot
+            as the surface of the sun. The heat also comes from radioactive decay of minerals in the Earth's
+            crust. This heat has been there since the Earth formed billions of years ago, and it will last
+            for billions more years.
           </p>
 
-          <h3 className="text-2xl font-medium">Heat from Earth's Core</h3>
-          <p>
-            The center of Earth, called the core, is incredibly hot—about 10,800°F (6,000°C), as hot as the sun's surface! This heat was created billions of years ago when Earth formed. It's also continuously made by radioactive minerals breaking down deep underground. This heat slowly moves outward toward Earth's surface through layers of rock. In some places, especially near tectonic plate boundaries and volcanic areas, this heat is much closer to the surface and easier to reach.
+          <h3 className="text-2xl font-medium text-foreground">Underground Heat Reservoirs</h3>
+          <p className="text-foreground/90">
+            In some places, underground water gets heated by hot rocks deep in the Earth. This creates
+            geothermal reservoirs—underground pools of hot water and steam. These reservoirs can be one or
+            two miles below the surface. The water in these reservoirs can be over 300°F (150°C). Geothermal
+            power plants drill wells down to these reservoirs to bring the hot water and steam to the surface.
           </p>
 
-          <h3 className="text-2xl font-medium">Underground Reservoirs</h3>
-          <p>
-            Geothermal reservoirs are underground pools of hot water and steam trapped in porous rock. These reservoirs form when rainwater and snowmelt seep deep into the ground through cracks and porous rocks. As this water goes deeper, it gets heated by the hot rocks around it. The heated water and steam get trapped under layers of solid rock, creating a natural underground pool of heat energy. Geothermal power plants drill wells (sometimes over a mile deep) to reach these reservoirs and bring the hot water or steam to the surface.
+          <h3 className="text-2xl font-medium text-foreground">Making Electricity from Heat</h3>
+          <p className="text-foreground/90">
+            A geothermal power plant pumps hot water or steam from underground through a production well.
+            The steam spins a turbine connected to a generator. The generator makes electricity. After the
+            steam spins the turbine, it cools down and turns back into water. This water is pumped back
+            underground through an injection well. This refills the reservoir so it can be used again. This
+            makes geothermal energy sustainable—it can keep producing power for a very long time.
           </p>
 
-          <h3 className="text-2xl font-medium">Steam Turning Turbines</h3>
-          <p>
-            Once the hot water or steam reaches the surface through production wells, it goes into a geothermal power plant. If the reservoir makes steam directly, it goes straight to a turbine. If the reservoir makes hot water, the pressure is lowered to turn some of the water into steam (this is called "flashing"). The high-pressure steam rushes through the blades of a turbine, making it spin at high speeds—similar to how wind turns a wind turbine or water turns a hydroelectric turbine.
-          </p>
-
-          <h3 className="text-2xl font-medium">Electricity Generation Process</h3>
-          <p>
-            The spinning turbine connects to a generator, which turns the mechanical energy of rotation into electrical energy. Inside the generator, the rotating shaft turns magnets surrounded by coils of wire, creating a magnetic field that makes electricity. After the steam passes through the turbine, it's cooled in a cooling tower where it turns back into water. This water is then pumped back into the geothermal reservoir through injection wells, making the process sustainable. The electricity goes to a transformer that adjusts the voltage before sending it through power lines to homes and businesses.
+          <h3 className="text-2xl font-medium text-foreground">Benefits of Geothermal Energy</h3>
+          <p className="text-foreground/90">
+            Geothermal energy is clean and reliable. It doesn't burn fuel or create air pollution. Unlike
+            solar and wind energy, geothermal plants can run 24 hours a day, every day. They don't depend
+            on weather or time of day. Geothermal energy can also be used directly for heating buildings,
+            growing plants in greenhouses, and warming fish farms. Countries like Iceland use geothermal
+            energy to heat most of their buildings.
           </p>
 
           {/* Diagram */}

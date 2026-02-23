@@ -2,23 +2,23 @@ import { PVCellDiagram } from '@/components/diagrams/PVCellDiagram';
 
 /**
  * SolarEnergyPage explains passive vs active solar heating systems
- * and photovoltaic cells with an educational diagram.
+ * and photovoltaic cells with an educational diagram and dark mode support.
  */
 export default function SolarEnergyPage() {
   return (
     <div className="container py-12">
       <article className="prose prose-lg mx-auto max-w-4xl dark:prose-invert">
-        <h1 className="text-4xl font-bold tracking-tight">Solar Energy</h1>
+        <h1 className="text-4xl font-bold tracking-tight text-foreground">Solar Energy</h1>
         <p className="lead text-muted-foreground">
           Harnessing the power of the sun to create clean, renewable electricity and heat.
         </p>
 
         {/* Section 1: Passive vs Active Solar Heating */}
         <section className="mt-8">
-          <h2 className="text-3xl font-semibold">Passive vs Active Solar Heating</h2>
+          <h2 className="text-3xl font-semibold text-foreground">Passive vs Active Solar Heating</h2>
           
-          <h3 className="text-2xl font-medium">What is Passive Solar Heating?</h3>
-          <p>
+          <h3 className="text-2xl font-medium text-foreground">What is Passive Solar Heating?</h3>
+          <p className="text-foreground/90">
             Passive solar heating is a simple way to warm buildings using only the sun. No machines are needed.
             Buildings are designed with large windows that face the sun. Sunlight comes through the windows and
             heats up the rooms inside. Heavy materials like concrete, brick, or tile soak up this heat during
@@ -26,8 +26,8 @@ export default function SolarEnergyPage() {
             using any pumps or fans.
           </p>
 
-          <h3 className="text-2xl font-medium">What is Active Solar Heating?</h3>
-          <p>
+          <h3 className="text-2xl font-medium text-foreground">What is Active Solar Heating?</h3>
+          <p className="text-foreground/90">
             Active solar heating uses machines to collect and move heat from the sun. Solar collectors on the
             roof catch sunlight and turn it into heat. This heat warms up water or air inside the collectors.
             Then pumps or fans push the hot water or air through pipes to different rooms in the building.
@@ -35,8 +35,8 @@ export default function SolarEnergyPage() {
             goes down or on cloudy days.
           </p>
 
-          <h3 className="text-2xl font-medium">How Solar Energy Regulates Temperature</h3>
-          <p>
+          <h3 className="text-2xl font-medium text-foreground">How Solar Energy Regulates Temperature</h3>
+          <p className="text-foreground/90">
             Both types of solar heating keep buildings at a comfortable temperature. Passive systems use heavy
             materials that soak up heat slowly and let it out slowly. This stops the temperature from changing
             too fast. Active systems use controls and thermostats to send heat to the right place at the right
@@ -46,17 +46,17 @@ export default function SolarEnergyPage() {
 
         {/* Section 2: Photovoltaic Cells */}
         <section className="mt-12">
-          <h2 className="text-3xl font-semibold">Photovoltaic Cells</h2>
+          <h2 className="text-3xl font-semibold text-foreground">Photovoltaic Cells</h2>
           
-          <h3 className="text-2xl font-medium">What are Photovoltaic (PV) Cells?</h3>
-          <p>
+          <h3 className="text-2xl font-medium text-foreground">What are Photovoltaic (PV) Cells?</h3>
+          <p className="text-foreground/90">
             Photovoltaic cells are also called solar cells. They turn sunlight into electricity. These cells
             are made from special materials called semiconductors. Silicon is the most common one. When sunlight
             hits a solar cell, it makes electricity flow. This electricity can power homes, schools, and businesses.
           </p>
 
-          <h3 className="text-2xl font-medium">The Photovoltaic Effect</h3>
-          <p>
+          <h3 className="text-2xl font-medium text-foreground">The Photovoltaic Effect</h3>
+          <p className="text-foreground/90">
             The photovoltaic effect is how solar cells make electricity. Sunlight is made of tiny energy packets
             called photons. When photons hit the semiconductor material, they knock electrons loose. These free
             electrons start moving around. The moving electrons create an electric current. The semiconductor is
@@ -64,8 +64,8 @@ export default function SolarEnergyPage() {
             direction. This creates DC (direct current) electricity.
           </p>
 
-          <h3 className="text-2xl font-medium">From Cells to Panels</h3>
-          <p>
+          <h3 className="text-2xl font-medium text-foreground">From Cells to Panels</h3>
+          <p className="text-foreground/90">
             One solar cell only makes a tiny bit of electricity—about 0.5 volts. That's not enough to power
             anything useful. So many cells are connected together to make a solar panel. Most solar panels have
             60 to 72 cells. You can connect many panels together to make a solar array. A big array can power

@@ -1,64 +1,25 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "Educational app/site with pages on renewable energy topics; update content readability and add diagrams/images to match other pages.",
+  "summary": "New project",
   "architectural_notes": [],
   "known_issues": [],
   "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Clean, simple renewable energy icon with sun rays, wind turbine blade, or leaf symbol in green and yellow tones suitable for favicon display (favicon.dim_32x32.png)",
   "existing_features": [
     {
-      "id": "feature-rewrite-simplify-all-explanatory-paragraphs-on-the-hydropower-tidal-page-frontend-src-pages-hydropowertidalpage-tsx-to-a-lower-high-school-reading-level-while-preserving-the-original-meaning-and-keeping-all-existing-headings-and-section-structure-unchanged",
-      "title": "Rewrite/simplify all explanatory paragraphs on the Hydropower & Tidal page (frontend/src/pages/HydropowerTidalPage.tsx) to a lower high school reading level while preserving the original meaning and keeping all existing headings and section structure unchanged.",
+      "id": "feature-generate-a-favicon-logo-that-represents-renewable-energy-themes-such-as-sun-wind-water-or-leaf-elements-suitable-for-display-in-browser-tabs",
+      "title": "Generate a favicon logo that represents renewable energy themes (such as sun, wind, water, or leaf elements) suitable for display in browser tabs",
       "reqIds": [
         "REQ-1"
       ],
       "version": 1
     },
     {
-      "id": "feature-rewrite-simplify-all-explanatory-paragraphs-on-the-wind-energy-page-frontend-src-pages-windenergypage-tsx-to-a-lower-high-school-reading-level-while-preserving-the-original-meaning-and-keeping-all-existing-headings-and-section-structure-unchanged",
-      "title": "Rewrite/simplify all explanatory paragraphs on the Wind Energy page (frontend/src/pages/WindEnergyPage.tsx) to a lower high school reading level while preserving the original meaning and keeping all existing headings and section structure unchanged.",
+      "id": "feature-update-frontend-index-html-to-reference-the-generated-favicon-file-in-the-head-section-with-proper-link-tags-for-different-sizes",
+      "title": "Update frontend/index.html to reference the generated favicon file in the <head> section with proper link tags for different sizes",
       "reqIds": [
         "REQ-2"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-rewrite-simplify-all-explanatory-paragraphs-on-the-geothermal-energy-page-frontend-src-pages-geothermalenergypage-tsx-to-a-lower-high-school-reading-level-while-preserving-the-original-meaning-and-keeping-all-existing-headings-and-section-structure-unchanged",
-      "title": "Rewrite/simplify all explanatory paragraphs on the Geothermal Energy page (frontend/src/pages/GeothermalEnergyPage.tsx) to a lower high school reading level while preserving the original meaning and keeping all existing headings and section structure unchanged.",
-      "reqIds": [
-        "REQ-3"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-rewrite-simplify-all-explanatory-paragraphs-on-the-biomass-energy-page-frontend-src-pages-biomassenergypage-tsx-to-a-lower-high-school-reading-level-while-preserving-the-original-meaning-and-keeping-all-existing-headings-and-section-structure-unchanged",
-      "title": "Rewrite/simplify all explanatory paragraphs on the Biomass Energy page (frontend/src/pages/BiomassEnergyPage.tsx) to a lower high school reading level while preserving the original meaning and keeping all existing headings and section structure unchanged.",
-      "reqIds": [
-        "REQ-4"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-rewrite-simplify-all-explanatory-paragraphs-on-the-biofuels-page-frontend-src-pages-biofuelspage-tsx-to-a-lower-high-school-reading-level-while-preserving-the-original-meaning-and-keeping-all-existing-headings-and-section-structure-unchanged",
-      "title": "Rewrite/simplify all explanatory paragraphs on the Biofuels page (frontend/src/pages/BiofuelsPage.tsx) to a lower high school reading level while preserving the original meaning and keeping all existing headings and section structure unchanged.",
-      "reqIds": [
-        "REQ-5"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-a-new-biofuels-process-diagram-component-similar-in-style-and-structure-to-the-existing-svg-diagram-components-and-render-it-at-the-bottom-of-the-biofuels-page-content",
-      "title": "Add a new Biofuels process diagram component (similar in style and structure to the existing SVG diagram components) and render it at the bottom of the Biofuels page content.",
-      "reqIds": [
-        "REQ-6"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-simplify-user-facing-paragraph-text-on-the-sources-page-frontend-src-pages-sourcespage-tsx-to-a-lower-high-school-reading-level-without-changing-any-source-titles-or-urls",
-      "title": "Simplify user-facing paragraph text on the Sources page (frontend/src/pages/SourcesPage.tsx) to a lower high school reading level without changing any source titles or URLs.",
-      "reqIds": [
-        "REQ-7"
       ],
       "version": 1
     }
@@ -66,18 +27,11 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Simplify/rewriting page paragraphs (Hydropower & Tidal, Wind Energy, Geothermal, Biomass, Biofuels, Sources) to a lower high school reading level.",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-2",
-      "summary": "Add a biofuels process diagram image at the bottom of the Biofuels page, consistent with diagrams used on the other pages.",
+      "summary": "Add logo for website tab (favicon)",
       "reqIds": [],
       "status": "pending"
     }
   ],
-  "gameProjectType": "none",
   "projectName": "Renewable Energy Sources",
   "clarification_mode": "instant",
   "clarification_rounds": 0

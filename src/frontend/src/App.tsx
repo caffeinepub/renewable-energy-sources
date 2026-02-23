@@ -8,6 +8,7 @@ import WindEnergyPage from './pages/WindEnergyPage';
 import GeothermalEnergyPage from './pages/GeothermalEnergyPage';
 import BiomassEnergyPage from './pages/BiomassEnergyPage';
 import BiofuelsPage from './pages/BiofuelsPage';
+import QuizPage from './pages/QuizPage';
 import SourcesPage from './pages/SourcesPage';
 
 // Root route with layout wrapper
@@ -64,6 +65,12 @@ const biofuelsRoute = createRoute({
   component: BiofuelsPage,
 });
 
+const quizRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/quiz',
+  component: QuizPage,
+});
+
 const sourcesRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/sources',
@@ -79,6 +86,7 @@ const routeTree = rootRoute.addChildren([
   geothermalRoute,
   biomassRoute,
   biofuelsRoute,
+  quizRoute,
   sourcesRoute,
 ]);
 

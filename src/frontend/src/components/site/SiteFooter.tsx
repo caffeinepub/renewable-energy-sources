@@ -2,7 +2,7 @@ import { Heart } from 'lucide-react';
 import { SITE_NAME } from '@/constants/site';
 
 /**
- * SiteFooter displays consistent footer content across all pages,
+ * SiteFooter displays consistent footer content across all pages with dark mode support,
  * including attribution and copyright information.
  */
 export function SiteFooter() {
@@ -12,7 +12,7 @@ export function SiteFooter() {
   );
 
   return (
-    <footer className="border-t border-border/40 bg-muted/30">
+    <footer className="border-t border-border/40 bg-muted/30 transition-colors dark:bg-muted/10">
       <div className="container py-8">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <div className="text-center text-sm text-muted-foreground md:text-left">

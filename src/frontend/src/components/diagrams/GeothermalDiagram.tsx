@@ -1,148 +1,101 @@
 /**
- * GeothermalDiagram shows underground heat extraction and
- * electricity generation from geothermal energy.
+ * GeothermalDiagram illustrates geothermal power plant with underground reservoir,
+ * production well, turbine, generator, and reinjection well with dark mode support.
  */
 export function GeothermalDiagram() {
   return (
-    <div className="rounded-lg border-2 border-border bg-card p-6">
-      <h3 className="mb-4 text-center text-xl font-semibold">
+    <div className="rounded-lg border-2 border-border bg-card p-6 transition-colors">
+      <h3 className="mb-4 text-center text-xl font-semibold text-foreground">
         Geothermal Power Plant
       </h3>
       <svg
-        viewBox="0 0 800 500"
+        viewBox="0 0 800 600"
         className="mx-auto w-full max-w-3xl"
         role="img"
         aria-labelledby="geo-title geo-desc"
       >
         <title id="geo-title">Geothermal Energy Diagram</title>
         <desc id="geo-desc">
-          Diagram showing underground heat reservoir, production well, steam turbine, and reinjection well
+          Diagram showing underground heat reservoir, production well, turbine, generator, and injection well
         </desc>
 
-        {/* Ground level */}
-        <line x1="0" y1="200" x2="800" y2="200" stroke="oklch(0.5 0.08 80)" strokeWidth="3" />
-        <text x="20" y="195" className="fill-foreground text-xs font-medium">Ground Level</text>
-
-        {/* Underground layers */}
-        <rect x="0" y="200" width="800" height="100" fill="oklch(0.6 0.08 80)" opacity="0.3" />
-        <rect x="0" y="300" width="800" height="100" fill="oklch(0.5 0.08 60)" opacity="0.4" />
-        <rect x="0" y="400" width="800" height="100" fill="oklch(0.4 0.12 40)" opacity="0.5" />
-
-        {/* Heat indicators in deep layer */}
-        <g>
-          <circle cx="200" cy="430" r="8" fill="oklch(0.7 0.25 30)" opacity="0.7" />
-          <circle cx="250" cy="450" r="6" fill="oklch(0.7 0.25 30)" opacity="0.7" />
-          <circle cx="300" cy="440" r="7" fill="oklch(0.7 0.25 30)" opacity="0.7" />
-          <circle cx="350" cy="460" r="8" fill="oklch(0.7 0.25 30)" opacity="0.7" />
-          <circle cx="400" cy="445" r="6" fill="oklch(0.7 0.25 30)" opacity="0.7" />
-          <circle cx="450" cy="455" r="7" fill="oklch(0.7 0.25 30)" opacity="0.7" />
-          <text x="325" y="490" textAnchor="middle" className="fill-foreground text-sm font-semibold">
-            Hot Rock & Underground Reservoir (300-700°F)
-          </text>
-        </g>
-
+        {/* Ground layers */}
+        <rect x="0" y="300" width="800" height="50" fill="oklch(0.60 0.08 60)" className="dark:fill-[oklch(0.40_0.08_60)]" />
+        <rect x="0" y="350" width="800" height="100" fill="oklch(0.50 0.08 50)" className="dark:fill-[oklch(0.35_0.08_50)]" />
+        <rect x="0" y="450" width="800" height="150" fill="oklch(0.40 0.08 40)" className="dark:fill-[oklch(0.30_0.08_40)]" />
+        
+        {/* Underground heat reservoir */}
+        <ellipse cx="400" cy="520" rx="200" ry="60" fill="oklch(0.65 0.20 30)" stroke="oklch(0.55 0.20 30)" strokeWidth="2" className="dark:fill-[oklch(0.45_0.20_30)] dark:stroke-[oklch(0.35_0.20_30)]" />
+        
         {/* Production well */}
-        <rect x="250" y="50" width="30" height="400" fill="oklch(0.5 0 0)" stroke="oklch(0.3 0 0)" strokeWidth="2" />
-        <text x="265" y="40" textAnchor="middle" className="fill-foreground text-xs font-semibold">
+        <rect x="280" y="150" width="30" height="370" fill="oklch(0.70 0.02 100)" stroke="oklch(0.55 0.02 100)" strokeWidth="2" className="dark:fill-[oklch(0.35_0.02_100)] dark:stroke-[oklch(0.50_0.02_100)]" />
+        
+        {/* Injection well */}
+        <rect x="490" y="200" width="30" height="320" fill="oklch(0.70 0.02 100)" stroke="oklch(0.55 0.02 100)" strokeWidth="2" className="dark:fill-[oklch(0.35_0.02_100)] dark:stroke-[oklch(0.50_0.02_100)]" />
+        
+        {/* Steam rising in production well */}
+        <path d="M 295 450 Q 290 400 295 350 Q 300 300 295 250 Q 290 200 295 150" stroke="oklch(0.85 0.02 100)" strokeWidth="2" fill="none" strokeDasharray="5,5" className="dark:stroke-[oklch(0.70_0.02_100)]" />
+        
+        {/* Power plant building */}
+        <rect x="200" y="100" width="200" height="50" fill="oklch(0.75 0.02 100)" stroke="oklch(0.60 0.02 100)" strokeWidth="2" className="dark:fill-[oklch(0.30_0.02_100)] dark:stroke-[oklch(0.45_0.02_100)]" />
+        
+        {/* Turbine */}
+        <circle cx="330" cy="125" r="20" fill="oklch(0.45 0.12 150)" stroke="oklch(0.35 0.12 150)" strokeWidth="2" className="dark:fill-[oklch(0.35_0.12_150)] dark:stroke-[oklch(0.25_0.12_150)]" />
+        
+        {/* Generator */}
+        <rect x="360" y="110" width="30" height="30" fill="oklch(0.55 0.08 80)" stroke="oklch(0.45 0.08 80)" strokeWidth="2" className="dark:fill-[oklch(0.35_0.08_80)] dark:stroke-[oklch(0.25_0.08_80)]" />
+        
+        {/* Cooling tower */}
+        <path d="M 420 150 L 440 100 L 460 100 L 480 150 Z" fill="oklch(0.80 0.02 100)" stroke="oklch(0.65 0.02 100)" strokeWidth="2" className="dark:fill-[oklch(0.35_0.02_100)] dark:stroke-[oklch(0.50_0.02_100)]" />
+        <path d="M 440 100 L 445 70 L 455 70 L 460 100" fill="oklch(0.85 0.02 100)" stroke="oklch(0.70 0.02 100)" strokeWidth="1" className="dark:fill-[oklch(0.40_0.02_100)] dark:stroke-[oklch(0.55_0.02_100)]" />
+        
+        {/* Steam from cooling tower */}
+        <ellipse cx="450" cy="60" rx="15" ry="8" fill="oklch(0.90 0.02 100)" opacity="0.7" className="dark:fill-[oklch(0.70_0.02_100)]" />
+        <ellipse cx="445" cy="50" rx="12" ry="6" fill="oklch(0.90 0.02 100)" opacity="0.5" className="dark:fill-[oklch(0.70_0.02_100)]" />
+        
+        {/* Pipes */}
+        <line x1="350" y1="125" x2="360" y2="125" stroke="oklch(0.40 0 0)" strokeWidth="3" className="dark:stroke-[oklch(0.60_0_0)]" />
+        <path d="M 390 125 L 420 125 L 420 150" stroke="oklch(0.40 0 0)" strokeWidth="3" fill="none" className="dark:stroke-[oklch(0.60_0_0)]" />
+        <path d="M 480 150 L 505 150 L 505 200" stroke="oklch(0.40 0 0)" strokeWidth="3" fill="none" className="dark:stroke-[oklch(0.60_0_0)]" />
+        
+        {/* Power lines */}
+        <line x1="390" y1="110" x2="550" y2="50" stroke="oklch(0.40 0 0)" strokeWidth="3" className="dark:stroke-[oklch(0.60_0_0)]" />
+        
+        {/* Labels */}
+        <text x="295" y="90" textAnchor="middle" className="fill-foreground text-xs font-medium">
           Production Well
         </text>
-
-        {/* Steam/hot water rising */}
-        <g>
-          <path d="M 260 420 Q 258 380 260 340" stroke="oklch(0.85 0.15 30)" strokeWidth="3" fill="none" opacity="0.7" />
-          <path d="M 270 420 Q 272 380 270 340" stroke="oklch(0.85 0.15 30)" strokeWidth="3" fill="none" opacity="0.7" />
-          <circle cx="260" cy="350" r="4" fill="oklch(0.85 0.15 30)" opacity="0.6" />
-          <circle cx="270" cy="370" r="3" fill="oklch(0.85 0.15 30)" opacity="0.6" />
-          <circle cx="265" cy="390" r="4" fill="oklch(0.85 0.15 30)" opacity="0.6" />
-        </g>
-
-        {/* Power plant building */}
-        <rect x="200" y="80" width="180" height="120" fill="oklch(0.75 0 0)" stroke="oklch(0.55 0 0)" strokeWidth="3" rx="8" />
-        <text x="290" y="70" textAnchor="middle" className="fill-foreground text-sm font-semibold">
-          Power Plant
-        </text>
-
-        {/* Turbine */}
-        <circle cx="320" cy="140" r="35" fill="oklch(0.55 0.12 150)" stroke="oklch(0.45 0.12 150)" strokeWidth="3" />
-        <g transform="translate(320, 140)">
-          <path d="M 0 -20 L 8 -8 L 0 0 L -8 -8 Z" fill="oklch(0.45 0.12 150)" />
-          <path d="M 20 0 L 8 8 L 0 0 L 8 -8 Z" fill="oklch(0.45 0.12 150)" />
-          <path d="M 0 20 L -8 8 L 0 0 L 8 8 Z" fill="oklch(0.45 0.12 150)" />
-          <path d="M -20 0 L -8 -8 L 0 0 L -8 8 Z" fill="oklch(0.45 0.12 150)" />
-        </g>
-        <text x="320" y="190" textAnchor="middle" className="fill-foreground text-xs font-medium">
+        <text x="330" y="175" textAnchor="middle" className="fill-foreground text-xs font-medium">
           Turbine
         </text>
-
-        {/* Generator */}
-        <rect x="360" y="120" width="50" height="40" fill="oklch(0.6 0.18 30)" stroke="oklch(0.5 0.18 30)" strokeWidth="2" rx="4" />
-        <circle cx="385" cy="140" r="12" fill="oklch(0.7 0.18 30)" />
-        <text x="385" y="190" textAnchor="middle" className="fill-foreground text-xs font-medium">
+        <text x="375" y="175" textAnchor="middle" className="fill-foreground text-xs font-medium">
           Generator
         </text>
-
-        {/* Electricity output */}
-        <line x1="410" y1="140" x2="460" y2="140" stroke="oklch(0.85 0.15 85)" strokeWidth="4" />
-        <path d="M 430 135 L 430 145" stroke="oklch(0.85 0.15 85)" strokeWidth="2" />
-        <path d="M 440 135 L 440 145" stroke="oklch(0.85 0.15 85)" strokeWidth="2" />
-        <text x="490" y="145" className="fill-foreground text-sm font-semibold">
-          Electricity
-        </text>
-
-        {/* Cooling tower */}
-        <path d="M 420 80 L 440 80 L 450 120 L 410 120 Z" fill="oklch(0.7 0 0)" stroke="oklch(0.5 0 0)" strokeWidth="2" />
-        <g>
-          <circle cx="425" cy="65" r="3" fill="oklch(0.8 0 0)" opacity="0.6" />
-          <circle cx="430" cy="60" r="3" fill="oklch(0.8 0 0)" opacity="0.6" />
-          <circle cx="435" cy="55" r="3" fill="oklch(0.8 0 0)" opacity="0.6" />
-        </g>
-        <text x="430" y="45" textAnchor="middle" className="fill-foreground text-xs font-medium">
+        <text x="450" y="185" textAnchor="middle" className="fill-foreground text-xs font-medium">
           Cooling Tower
         </text>
-
-        {/* Reinjection well */}
-        <rect x="520" y="50" width="30" height="400" fill="oklch(0.5 0 0)" stroke="oklch(0.3 0 0)" strokeWidth="2" />
-        <text x="535" y="40" textAnchor="middle" className="fill-foreground text-xs font-semibold">
+        <text x="505" y="190" textAnchor="middle" className="fill-foreground text-xs font-medium">
           Injection Well
         </text>
+        <text x="400" y="560" textAnchor="middle" className="fill-white text-sm font-semibold">
+          Hot Water/Steam Reservoir
+        </text>
+        <text x="600" y="45" textAnchor="start" className="fill-foreground text-sm font-medium">
+          Electricity
+        </text>
+        
+        {/* Ground level label */}
+        <text x="50" y="325" textAnchor="start" className="fill-foreground text-xs font-medium">
+          Ground Level
+        </text>
+        <text x="50" y="475" textAnchor="start" className="fill-white text-xs font-medium">
+          1-2 miles deep
+        </text>
 
-        {/* Water going down */}
-        <g>
-          <path d="M 530 240 Q 532 280 530 320" stroke="oklch(0.65 0.15 220)" strokeWidth="3" fill="none" markerEnd="url(#arrow-down)" />
-          <path d="M 540 240 Q 538 280 540 320" stroke="oklch(0.65 0.15 220)" strokeWidth="3" fill="none" markerEnd="url(#arrow-down)" />
-        </g>
-
-        {/* Pipes connecting */}
-        <line x1="280" y1="100" x2="320" y2="100" stroke="oklch(0.5 0 0)" strokeWidth="4" />
-        <line x1="355" y1="140" x2="360" y2="140" stroke="oklch(0.5 0 0)" strokeWidth="4" />
-        <line x1="410" y1="140" x2="430" y2="140" stroke="oklch(0.5 0 0)" strokeWidth="4" />
-        <line x1="430" y1="140" x2="430" y2="120" stroke="oklch(0.5 0 0)" strokeWidth="4" />
-        <line x1="430" y1="200" x2="430" y2="220" stroke="oklch(0.5 0 0)" strokeWidth="4" />
-        <line x1="430" y1="220" x2="520" y2="220" stroke="oklch(0.5 0 0)" strokeWidth="4" />
-
-        {/* Process labels */}
-        <g className="text-xs">
-          <text x="600" y="250" className="fill-foreground font-semibold">Process:</text>
-          <text x="600" y="275" className="fill-muted-foreground">1. Hot water/steam rises</text>
-          <text x="600" y="295" className="fill-muted-foreground">2. Steam spins turbine</text>
-          <text x="600" y="315" className="fill-muted-foreground">3. Generator makes electricity</text>
-          <text x="600" y="335" className="fill-muted-foreground">4. Water cools & returns</text>
-          <text x="600" y="355" className="fill-muted-foreground">5. Sustainable cycle</text>
-        </g>
-
-        {/* Arrow markers */}
-        <defs>
-          <marker
-            id="arrow-down"
-            markerWidth="10"
-            markerHeight="10"
-            refX="5"
-            refY="9"
-            orient="auto"
-          >
-            <polygon points="0 0, 10 0, 5 10" fill="oklch(0.65 0.15 220)" />
-          </marker>
-        </defs>
+        {/* Heat indicators */}
+        <text x="400" y="540" textAnchor="middle" className="fill-white text-xs">
+          300°F+ (150°C+)
+        </text>
       </svg>
     </div>
   );

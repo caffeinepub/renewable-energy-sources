@@ -1,94 +1,113 @@
 import { BiofuelsProcessDiagram } from '@/components/diagrams/BiofuelsProcessDiagram';
 
 /**
- * BiofuelsPage explains the production of ethanol and biodiesel
- * and their applications in transportation and power generation.
+ * BiofuelsPage explains ethanol and biodiesel production with simplified high-school-level
+ * step-by-step sections and includes the BiofuelsProcessDiagram with dark mode support.
  */
 export default function BiofuelsPage() {
   return (
     <div className="container py-12">
       <article className="prose prose-lg mx-auto max-w-4xl dark:prose-invert">
-        <h1 className="text-4xl font-bold tracking-tight">Biofuels</h1>
+        <h1 className="text-4xl font-bold tracking-tight text-foreground">Biofuels</h1>
         <p className="lead text-muted-foreground">
-          Renewable liquid fuels made from organic materials for transportation and energy.
+          Liquid fuels made from renewable plant materials that can power vehicles and machinery.
         </p>
 
         <section className="mt-8">
-          <h2 className="text-3xl font-semibold">What are Biofuels?</h2>
-          <p>
-            Biofuels are liquid or gas fuels made from renewable organic materials, mainly plants. Unlike fossil fuels (coal, oil, and natural gas) that took millions of years to form, biofuels can be made relatively quickly from crops and waste materials. The two most common types are ethanol and biodiesel. These fuels can replace or be mixed with traditional gasoline and diesel, helping reduce our use of fossil fuels and decrease greenhouse gas emissions from transportation and power generation.
-          </p>
-        </section>
-
-        {/* Ethanol Production Section */}
-        <section className="mt-12">
-          <h2 className="text-3xl font-semibold">Ethanol Production</h2>
+          <h2 className="text-3xl font-semibold text-foreground">What are Biofuels?</h2>
           
-          <h3 className="text-2xl font-medium">Step 1: Selecting Feedstock</h3>
-          <p>
-            Ethanol production starts with choosing the right plant materials, called feedstock. The most common feedstocks are crops high in sugars or starches, such as corn, sugarcane, wheat, and barley. In the United States, corn is the main source, while Brazil mostly uses sugarcane. These crops are harvested and brought to ethanol production facilities.
-          </p>
-
-          <h3 className="text-2xl font-medium">Step 2: Breaking Down Starches</h3>
-          <p>
-            If the feedstock has starches (like corn), it must first be broken down into simple sugars. The corn kernels are ground into a fine powder and mixed with water to make a mash. Enzymes are added to this mash, which break the complex starch molecules into simple sugars like glucose. This is similar to how your body digests food. If the feedstock already has sugars (like sugarcane), this step can be skipped.
-          </p>
-
-          <h3 className="text-2xl font-medium">Step 3: Fermentation</h3>
-          <p>
-            Fermentation is the key process that turns sugars into ethanol. Yeast (the same type used to make bread and beer) is added to the sugar solution. The yeast eats the sugar and makes ethanol (alcohol) and carbon dioxide. This happens in large fermentation tanks and usually takes 40-50 hours. The result is a liquid mixture with about 10-15% ethanol, along with water and other substances.
-          </p>
-
-          <h3 className="text-2xl font-medium">Step 4: Distillation and Dehydration</h3>
-          <p>
-            The fermented mixture is heated in a distillation column. Since ethanol boils at a lower temperature than water, it evaporates first and rises to the top of the column, where it's collected. This increases the ethanol concentration to about 95%. To make fuel-grade ethanol (which must be at least 99% pure), the remaining water is removed through a dehydration process using special drying materials. The final product is pure ethanol ready to be mixed with gasoline.
+          <p className="text-foreground/90">
+            Biofuels are liquid fuels made from plants and other organic materials. The two main types are
+            ethanol and biodiesel. These fuels can replace or be mixed with gasoline and diesel made from
+            petroleum. Biofuels are renewable because we can grow more plants every year. They also produce
+            less pollution than fossil fuels.
           </p>
         </section>
 
-        {/* Biodiesel Production Section */}
         <section className="mt-12">
-          <h2 className="text-3xl font-semibold">Biodiesel Production</h2>
+          <h2 className="text-3xl font-semibold text-foreground">Ethanol Production</h2>
           
-          <h3 className="text-2xl font-medium">Step 1: Collecting Oils and Fats</h3>
-          <p>
-            Biodiesel is made from oils and fats rather than sugars or starches. Common sources include vegetable oils (soybean, canola, palm, sunflower), animal fats (beef tallow, pork lard, chicken fat), and used cooking oil from restaurants. These oils and fats are collected and filtered to remove any food particles, water, or other stuff that could mess up the production process.
+          <h3 className="text-2xl font-medium text-foreground">Step 1: Growing the Crops</h3>
+          <p className="text-foreground/90">
+            Ethanol is made from crops that contain sugar or starch. In the United States, most ethanol comes
+            from corn. In Brazil, it comes from sugarcane. Other crops like wheat, barley, and sugar beets can
+            also be used. Farmers plant these crops in the spring and harvest them in the fall.
           </p>
 
-          <h3 className="text-2xl font-medium">Step 2: Transesterification</h3>
-          <p>
-            Transesterification is the chemical process that turns oils and fats into biodiesel. The cleaned oil is mixed with an alcohol (usually methanol) and a catalyst (typically sodium hydroxide or potassium hydroxide). When heated and mixed together, a chemical reaction happens that breaks apart the large, complex fat molecules. This reaction makes two products: biodiesel (also called fatty acid methyl esters or FAME) and glycerin (a thick, sweet liquid used in soaps and cosmetics).
+          <h3 className="text-2xl font-medium text-foreground">Step 2: Grinding and Mixing</h3>
+          <p className="text-foreground/90">
+            At the ethanol plant, the corn kernels are ground into a fine powder. This powder is mixed with
+            water to make a mash. Enzymes are added to the mash. Enzymes are special proteins that break down
+            the starch in the corn into simple sugars. The mash is heated to help the enzymes work faster.
           </p>
 
-          <h3 className="text-2xl font-medium">Step 3: Separation and Purification</h3>
-          <p>
-            After the reaction is done, the mixture is allowed to settle. Glycerin is heavier than biodiesel, so it sinks to the bottom and can be drained off and sold. The biodiesel layer on top still has traces of alcohol, catalyst, soap, and other impurities. It's washed with water several times to remove these, then dried to remove any remaining water. The result is pure biodiesel that meets fuel quality standards.
+          <h3 className="text-2xl font-medium text-foreground">Step 3: Fermentation</h3>
+          <p className="text-foreground/90">
+            The sugary mash is moved to large fermentation tanks. Yeast is added to the tanks. Yeast is a tiny
+            living organism that eats sugar and produces ethanol and carbon dioxide. This process is called
+            fermentation—the same process used to make beer and wine. The fermentation takes about 48 hours.
+            When it's done, the liquid contains about 10% ethanol.
           </p>
 
-          <h3 className="text-2xl font-medium">Step 4: Quality Testing</h3>
-          <p>
-            Before biodiesel can be sold and used, it must pass strict quality tests to make sure it meets industry standards. Tests check things like viscosity (thickness), flash point (safety), cloud point (cold weather performance), and contamination levels. Only biodiesel that passes all these tests is approved for use in vehicles and equipment.
+          <h3 className="text-2xl font-medium text-foreground">Step 4: Distillation</h3>
+          <p className="text-foreground/90">
+            The fermented liquid is heated in a distillation column. Ethanol boils at a lower temperature than
+            water. As the liquid heats up, the ethanol evaporates first. The ethanol vapor rises to the top of
+            the column where it cools and turns back into liquid. This concentrated ethanol is about 95% pure.
+            A final drying step removes the last bit of water, making it 99% pure ethanol.
           </p>
         </section>
 
-        {/* Usage Section */}
         <section className="mt-12">
-          <h2 className="text-3xl font-semibold">How Biofuels are Used</h2>
+          <h2 className="text-3xl font-semibold text-foreground">Biodiesel Production</h2>
           
-          <h3 className="text-2xl font-medium">Transportation Applications</h3>
-          <p>
-            Ethanol is mainly mixed with gasoline to make fuel for cars, trucks, and motorcycles. Most gasoline in the United States has 10% ethanol (called E10), which can be used in any gasoline vehicle. Some vehicles, called flex-fuel vehicles, can run on E85 (85% ethanol, 15% gasoline). Biodiesel can be used in diesel engines either pure (B100) or mixed with petroleum diesel in different amounts (B5, B20, etc.). Many buses, trucks, trains, and boats use biodiesel blends. Both fuels help reduce emissions and decrease dependence on imported oil.
+          <h3 className="text-2xl font-medium text-foreground">Step 1: Collecting Oils and Fats</h3>
+          <p className="text-foreground/90">
+            Biodiesel is made from vegetable oils and animal fats. Common sources include soybean oil, canola
+            oil, corn oil, and used cooking oil from restaurants. Animal fats from meat processing can also be
+            used. These oils and fats are collected and transported to a biodiesel plant.
           </p>
 
-          <h3 className="text-2xl font-medium">Power Plant Applications</h3>
-          <p>
-            Biofuels can also be burned in power plants to make electricity. Some power plants are designed just to run on biofuels, while others can switch between biofuels and traditional fossil fuels. When burned, biofuels heat water to create steam, which drives turbines connected to generators—the same process used in coal or natural gas power plants. Using biofuels in power plants helps diversify energy sources and can reduce overall carbon emissions, especially when the biofuels are made from waste materials or sustainably grown crops.
+          <h3 className="text-2xl font-medium text-foreground">Step 2: Filtering</h3>
+          <p className="text-foreground/90">
+            The oils and fats are filtered to remove any dirt, food particles, or water. Clean oil is important
+            for making high-quality biodiesel. Used cooking oil especially needs careful filtering because it
+            may contain bits of food.
+          </p>
+
+          <h3 className="text-2xl font-medium text-foreground">Step 3: Transesterification</h3>
+          <p className="text-foreground/90">
+            The clean oil is mixed with alcohol (usually methanol) and a catalyst (usually sodium hydroxide or
+            potassium hydroxide). This mixture is heated and stirred. A chemical reaction called transesterification
+            takes place. The oil molecules break apart and recombine with the alcohol to form biodiesel. This
+            reaction also produces glycerin as a byproduct.
+          </p>
+
+          <h3 className="text-2xl font-medium text-foreground">Step 4: Separation and Washing</h3>
+          <p className="text-foreground/90">
+            After the reaction, the mixture separates into two layers. The biodiesel floats on top because it's
+            lighter. The glycerin sinks to the bottom. The two layers are separated. The biodiesel is washed
+            with water to remove any remaining alcohol, catalyst, or soap. Then it's dried to remove water.
+            The final product is pure biodiesel ready to use in diesel engines.
           </p>
         </section>
 
-        {/* Diagram */}
-        <div className="not-prose my-8">
-          <BiofuelsProcessDiagram />
-        </div>
+        <section className="mt-12">
+          <h2 className="text-3xl font-semibold text-foreground">Using Biofuels</h2>
+          
+          <p className="text-foreground/90">
+            Ethanol is usually blended with gasoline. E10 fuel contains 10% ethanol and 90% gasoline. E85 fuel
+            contains 85% ethanol and is used in flex-fuel vehicles. Biodiesel can be used pure (B100) or blended
+            with petroleum diesel. B20 (20% biodiesel, 80% diesel) is a common blend. Most diesel engines can
+            run on biodiesel blends without any modifications. Biofuels help reduce our dependence on petroleum
+            and lower greenhouse gas emissions.
+          </p>
+
+          {/* Diagram */}
+          <div className="not-prose my-8">
+            <BiofuelsProcessDiagram />
+          </div>
+        </section>
       </article>
     </div>
   );

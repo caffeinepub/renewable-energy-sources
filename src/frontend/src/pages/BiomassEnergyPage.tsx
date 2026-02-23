@@ -1,39 +1,55 @@
 import { BiomassProcessDiagram } from '@/components/diagrams/BiomassProcessDiagram';
 
 /**
- * BiomassEnergyPage explains how organic materials are converted
- * into electricity through combustion and thermal processes.
+ * BiomassEnergyPage explains biomass energy with simplified high-school-level text
+ * and includes the process flow diagram with dark mode support.
  */
 export default function BiomassEnergyPage() {
   return (
     <div className="container py-12">
       <article className="prose prose-lg mx-auto max-w-4xl dark:prose-invert">
-        <h1 className="text-4xl font-bold tracking-tight">Biomass Energy</h1>
+        <h1 className="text-4xl font-bold tracking-tight text-foreground">Biomass Energy</h1>
         <p className="lead text-muted-foreground">
-          Converting organic materials into renewable energy through natural processes.
+          Converting organic materials into clean, renewable energy through combustion and other processes.
         </p>
 
         <section className="mt-8">
-          <h2 className="text-3xl font-semibold">Understanding Biomass Energy</h2>
+          <h2 className="text-3xl font-semibold text-foreground">What is Biomass?</h2>
           
-          <h3 className="text-2xl font-medium">What is Biomass?</h3>
-          <p>
-            Biomass is organic material from plants and animals. It includes any plant or animal matter that can be turned into energy. Biomass is renewable because plants and trees can be regrown, and organic waste is always being produced. When we use biomass for energy, we're using stored solar energy—plants capture energy from the sun through photosynthesis and store it in their tissues. This stored energy can then be released and turned into electricity or heat.
+          <p className="text-foreground/90">
+            Biomass is organic material that comes from plants and animals. "Organic" means it was once living.
+            Examples of biomass include wood, crops, food waste, animal waste, and yard trimmings. All of these
+            materials store energy from the sun. Plants capture sunlight through photosynthesis and store it as
+            chemical energy. When we burn biomass or break it down, we release that stored energy.
           </p>
 
-          <h3 className="text-2xl font-medium">Organic Materials Used</h3>
-          <p>
-            Many types of organic materials can be used as biomass fuel. Wood and wood waste (like sawdust, bark, and wood chips from lumber mills) are common sources. Agricultural crops and their waste—such as corn stalks, wheat straw, rice husks, and sugarcane leftovers—are also widely used. Other biomass sources include energy crops (plants grown just for fuel, like switchgrass), food waste from homes and restaurants, animal manure from farms, and even algae. Each type of biomass has different energy content, but all can be turned into useful energy.
+          <h3 className="text-2xl font-medium text-foreground">How Biomass Energy Works</h3>
+          <p className="text-foreground/90">
+            The most common way to get energy from biomass is by burning it. When biomass burns, it releases
+            heat. This heat can warm buildings directly. It can also be used to make electricity. In a biomass
+            power plant, biomass fuel is burned in a large furnace. The heat from burning boils water in a
+            boiler. This creates steam. The steam spins a turbine connected to a generator. The generator
+            makes electricity. After the steam spins the turbine, it cools down and turns back into water.
+            The water goes back to the boiler to be heated again.
           </p>
 
-          <h3 className="text-2xl font-medium">Combustion and Processing</h3>
-          <p>
-            The most common way to get energy from biomass is by burning it. Biomass is burned in special furnaces or boilers designed to handle organic materials well. Before burning, the biomass is often processed to improve its energy output. This might include drying it to remove moisture (wet biomass doesn't burn well), chopping or grinding it into smaller pieces for better burning, or pressing it into pellets or briquettes for easier handling and storage. Some biomass can also be turned into gas through a process called gasification, where heat and limited oxygen break down the organic material into burnable gases.
+          <h3 className="text-2xl font-medium text-foreground">Types of Biomass Fuel</h3>
+          <p className="text-foreground/90">
+            Many different materials can be used as biomass fuel. Wood and wood waste from sawmills are very
+            common. Agricultural waste like corn stalks, wheat straw, and rice husks can be burned. Energy
+            crops are plants grown specifically for fuel, like switchgrass and fast-growing trees. Even garbage
+            and landfill waste can be burned to make energy. Animal waste from farms can be turned into biogas,
+            which burns like natural gas.
           </p>
 
-          <h3 className="text-2xl font-medium">Heat → Steam → Turbine → Electricity</h3>
-          <p>
-            When biomass burns, it releases heat energy. This heat is used to boil water in large boilers, creating high-pressure steam. The steam then goes through pipes to a steam turbine—a machine with many blades arranged in rows. As the high-pressure steam rushes past these blades, it makes the turbine spin rapidly. The spinning turbine connects to a generator, which turns the mechanical energy of rotation into electrical energy through electromagnetic induction. After passing through the turbine, the steam is cooled and turns back into water, which returns to the boiler to be heated again. The electricity is sent through transformers and power lines to provide energy for homes, schools, and businesses.
+          <h3 className="text-2xl font-medium text-foreground">Is Biomass Renewable?</h3>
+          <p className="text-foreground/90">
+            Biomass is considered renewable because we can grow more of it. Trees can be replanted. Crops grow
+            every year. Waste is always being produced. However, biomass does release carbon dioxide when it
+            burns. The key is that plants absorb carbon dioxide as they grow. If we plant new trees and crops
+            to replace what we burn, the carbon cycle stays balanced. This makes biomass much cleaner than
+            fossil fuels like coal and oil, which release carbon that has been stored underground for millions
+            of years.
           </p>
 
           {/* Diagram */}

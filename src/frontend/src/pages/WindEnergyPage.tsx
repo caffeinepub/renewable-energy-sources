@@ -1,39 +1,52 @@
 import { WindTurbineDiagram } from '@/components/diagrams/WindTurbineDiagram';
 
 /**
- * WindEnergyPage explains how wind turbines convert wind energy
- * into electricity through mechanical and electrical processes.
+ * WindEnergyPage explains wind energy conversion with simplified high-school-level text
+ * and includes a labeled wind turbine diagram with dark mode support.
  */
 export default function WindEnergyPage() {
   return (
     <div className="container py-12">
       <article className="prose prose-lg mx-auto max-w-4xl dark:prose-invert">
-        <h1 className="text-4xl font-bold tracking-tight">Wind Energy</h1>
+        <h1 className="text-4xl font-bold tracking-tight text-foreground">Wind Energy</h1>
         <p className="lead text-muted-foreground">
-          Capturing the power of moving air to generate clean, renewable electricity.
+          Converting the kinetic energy of moving air into clean, renewable electricity.
         </p>
 
         <section className="mt-8">
-          <h2 className="text-3xl font-semibold">How Wind Energy Works</h2>
+          <h2 className="text-3xl font-semibold text-foreground">How Wind Turbines Work</h2>
           
-          <h3 className="text-2xl font-medium">What is Wind Energy?</h3>
-          <p>
-            Wind energy is electricity made from moving air in Earth's atmosphere. Wind happens when the sun heats different parts of Earth unevenly, causing air to move from high-pressure areas to low-pressure areas. This moving air has kinetic energy that can be captured and turned into electrical power using wind turbines. Wind energy is completely renewable and creates no greenhouse gas emissions.
+          <h3 className="text-2xl font-medium text-foreground">Wind as an Energy Source</h3>
+          <p className="text-foreground/90">
+            Wind is moving air. When the sun heats different parts of the Earth unevenly, air moves from hot
+            areas to cool areas. This creates wind. Wind has kinetic energy—the energy of motion. Wind turbines
+            capture this energy and turn it into electricity we can use.
           </p>
 
-          <h3 className="text-2xl font-medium">How Wind Turns the Blades</h3>
-          <p>
-            Modern wind turbines have large blades (often 100-300 feet long) shaped like airplane wings. When wind flows over these blades, it creates different air pressures on each side—lower pressure on one side and higher pressure on the other. This pressure difference creates lift, which makes the blades rotate. The blades are angled and shaped to catch the most wind energy, and they can turn to face the wind for best performance.
+          <h3 className="text-2xl font-medium text-foreground">The Rotor and Blades</h3>
+          <p className="text-foreground/90">
+            A wind turbine has large blades that spin when wind blows past them. The blades are shaped like
+            airplane wings. When wind hits the blades, it creates lift—the same force that makes airplanes fly.
+            This lift makes the blades spin around a central hub called the rotor. Most turbines have three
+            blades. The blades can be over 100 feet long on big turbines.
           </p>
 
-          <h3 className="text-2xl font-medium">The Rotor → Shaft → Generator Process</h3>
-          <p>
-            The rotating blades attach to a central hub called the rotor. As the blades spin, they turn the rotor, which connects to a low-speed shaft. This shaft typically spins at about 30-60 times per minute. Inside the turbine's housing (called the nacelle), a gearbox speeds up this rotation dramatically—to 1,000-1,800 times per minute. This high-speed shaft connects directly to a generator, which is the part that actually makes electricity.
+          <h3 className="text-2xl font-medium text-foreground">From Rotation to Electricity</h3>
+          <p className="text-foreground/90">
+            The spinning rotor connects to a shaft inside the turbine tower. This shaft spins slowly—only about
+            15 to 20 times per minute. That's too slow to make electricity efficiently. So the shaft connects
+            to a gearbox. The gearbox speeds up the rotation to about 1,500 rotations per minute. This fast
+            spinning shaft connects to a generator. The generator uses magnets and coils of wire to convert
+            the spinning motion into electricity. The electricity travels down cables inside the tower and
+            goes to the power grid.
           </p>
 
-          <h3 className="text-2xl font-medium">Converting Mechanical to Electrical Energy</h3>
-          <p>
-            The generator has powerful magnets and coils of copper wire. When the high-speed shaft spins the magnets inside the generator, they create a changing magnetic field around the wire coils. This changing magnetic field makes electrons in the wire move, creating an electric current. This is how mechanical energy (the spinning motion) becomes electrical energy. The electricity then travels through cables down the turbine tower to a transformer, which adjusts the voltage before sending the power to the electrical grid for homes and businesses.
+          <h3 className="text-2xl font-medium text-foreground">Wind Farms</h3>
+          <p className="text-foreground/90">
+            Wind turbines are often grouped together in wind farms. A wind farm can have dozens or even hundreds
+            of turbines. They are placed in areas with steady, strong winds—like open plains, hilltops, or
+            offshore in the ocean. Wind farms can generate enough electricity to power thousands of homes.
+            The electricity from all the turbines combines and feeds into the power grid.
           </p>
 
           {/* Diagram */}

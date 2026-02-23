@@ -1,132 +1,88 @@
 /**
- * WaterTurbineGeneratorDiagram shows the flow from water through
- * turbine to generator for hydroelectric power generation.
+ * WaterTurbineGeneratorDiagram shows the hydropower process from reservoir through
+ * penstock, turbine, and generator to electricity output with dark mode support.
  */
 export function WaterTurbineGeneratorDiagram() {
   return (
-    <div className="rounded-lg border-2 border-border bg-card p-6">
-      <h3 className="mb-4 text-center text-xl font-semibold">
-        Water → Turbine → Generator
+    <div className="rounded-lg border-2 border-border bg-card p-6 transition-colors">
+      <h3 className="mb-4 text-center text-xl font-semibold text-foreground">
+        Hydropower Generation Process
       </h3>
       <svg
-        viewBox="0 0 800 400"
+        viewBox="0 0 800 500"
         className="mx-auto w-full max-w-3xl"
         role="img"
         aria-labelledby="hydro-title hydro-desc"
       >
-        <title id="hydro-title">Hydropower Generation Diagram</title>
+        <title id="hydro-title">Hydropower Diagram</title>
         <desc id="hydro-desc">
-          Diagram showing water flowing through a turbine to spin a generator and produce electricity
+          Diagram showing water flowing from a reservoir through a penstock to spin a turbine and generator
         </desc>
 
-        {/* Dam/Reservoir */}
-        <rect x="50" y="100" width="150" height="150" fill="oklch(0.65 0.15 220)" opacity="0.6" />
-        <text x="125" y="90" textAnchor="middle" className="fill-foreground text-sm font-semibold">
+        {/* Dam */}
+        <path d="M 100 150 L 100 400 L 300 450 L 300 200 Z" fill="oklch(0.70 0.02 100)" stroke="oklch(0.55 0.02 100)" strokeWidth="2" className="dark:fill-[oklch(0.30_0.02_100)] dark:stroke-[oklch(0.45_0.02_100)]" />
+        
+        {/* Reservoir water */}
+        <path d="M 100 150 L 100 200 L 300 200 L 300 150 Z" fill="oklch(0.60 0.15 220)" stroke="oklch(0.50 0.15 220)" strokeWidth="2" className="dark:fill-[oklch(0.40_0.15_220)] dark:stroke-[oklch(0.30_0.15_220)]" />
+        
+        {/* Penstock (pipe) */}
+        <rect x="280" y="200" width="40" height="200" fill="oklch(0.50 0.02 100)" stroke="oklch(0.40 0.02 100)" strokeWidth="2" className="dark:fill-[oklch(0.35_0.02_100)] dark:stroke-[oklch(0.25_0.02_100)]" />
+        
+        {/* Turbine */}
+        <circle cx="300" cy="420" r="30" fill="oklch(0.45 0.12 150)" stroke="oklch(0.35 0.12 150)" strokeWidth="2" className="dark:fill-[oklch(0.35_0.12_150)] dark:stroke-[oklch(0.25_0.12_150)]" />
+        <path d="M 300 420 L 285 405 M 300 420 L 315 405 M 300 420 L 315 435 M 300 420 L 285 435" stroke="oklch(0.90 0.02 100)" strokeWidth="2" className="dark:stroke-[oklch(0.70_0.02_100)]" />
+        
+        {/* Generator */}
+        <rect x="340" y="390" width="80" height="60" fill="oklch(0.55 0.08 80)" stroke="oklch(0.45 0.08 80)" strokeWidth="2" rx="5" className="dark:fill-[oklch(0.35_0.08_80)] dark:stroke-[oklch(0.25_0.08_80)]" />
+        
+        {/* Shaft connecting turbine to generator */}
+        <line x1="330" y1="420" x2="340" y2="420" stroke="oklch(0.40 0 0)" strokeWidth="4" className="dark:stroke-[oklch(0.60_0_0)]" />
+        
+        {/* Water flow arrows */}
+        <path d="M 300 250 L 300 290" stroke="oklch(0.60 0.15 220)" strokeWidth="3" fill="none" markerEnd="url(#water-arrow)" className="dark:stroke-[oklch(0.70_0.15_220)]" />
+        <path d="M 300 350 L 300 390" stroke="oklch(0.60 0.15 220)" strokeWidth="3" fill="none" markerEnd="url(#water-arrow)" className="dark:stroke-[oklch(0.70_0.15_220)]" />
+        
+        {/* Outflow water */}
+        <path d="M 270 440 L 200 470 L 200 480 L 100 480" fill="oklch(0.60 0.15 220)" stroke="oklch(0.50 0.15 220)" strokeWidth="2" className="dark:fill-[oklch(0.40_0.15_220)] dark:stroke-[oklch(0.30_0.15_220)]" />
+        
+        {/* Power lines */}
+        <line x1="420" y1="400" x2="550" y2="350" stroke="oklch(0.40 0 0)" strokeWidth="3" className="dark:stroke-[oklch(0.60_0_0)]" />
+        <line x1="420" y1="440" x2="550" y2="440" stroke="oklch(0.40 0 0)" strokeWidth="3" className="dark:stroke-[oklch(0.60_0_0)]" />
+        
+        {/* Labels */}
+        <text x="200" y="140" textAnchor="middle" className="fill-foreground text-sm font-semibold">
           Reservoir
         </text>
-        <text x="125" y="180" textAnchor="middle" className="fill-white text-xs">
-          High Water Level
+        <text x="250" y="300" textAnchor="end" className="fill-foreground text-xs font-medium">
+          Penstock
         </text>
-
-        {/* Penstock (pipe) */}
-        <rect x="200" y="160" width="120" height="40" fill="oklch(0.5 0 0)" stroke="oklch(0.3 0 0)" strokeWidth="2" />
-        <path d="M 200 180 Q 210 180 220 185" stroke="oklch(0.65 0.15 220)" strokeWidth="3" fill="none" />
-        <path d="M 230 185 Q 240 188 250 190" stroke="oklch(0.65 0.15 220)" strokeWidth="3" fill="none" />
-        <path d="M 260 190 Q 270 192 280 193" stroke="oklch(0.65 0.15 220)" strokeWidth="3" fill="none" />
-        <text x="260" y="150" textAnchor="middle" className="fill-foreground text-xs font-medium">
-          Penstock (Pipe)
-        </text>
-
-        {/* Water flow arrows */}
-        <path d="M 210 180 L 230 180" stroke="oklch(0.65 0.15 220)" strokeWidth="2" markerEnd="url(#arrow-water)" />
-        <path d="M 250 185 L 270 185" stroke="oklch(0.65 0.15 220)" strokeWidth="2" markerEnd="url(#arrow-water)" />
-        <path d="M 290 190 L 310 190" stroke="oklch(0.65 0.15 220)" strokeWidth="2" markerEnd="url(#arrow-water)" />
-
-        {/* Turbine */}
-        <circle cx="380" cy="180" r="50" fill="oklch(0.55 0.12 150)" stroke="oklch(0.45 0.12 150)" strokeWidth="3" />
-        <g transform="translate(380, 180)">
-          <path d="M 0 -30 L 10 -10 L 0 0 L -10 -10 Z" fill="oklch(0.45 0.12 150)" />
-          <path d="M 30 0 L 10 10 L 0 0 L 10 -10 Z" fill="oklch(0.45 0.12 150)" />
-          <path d="M 0 30 L -10 10 L 0 0 L 10 10 Z" fill="oklch(0.45 0.12 150)" />
-          <path d="M -30 0 L -10 -10 L 0 0 L -10 10 Z" fill="oklch(0.45 0.12 150)" />
-          <circle cx="0" cy="0" r="8" fill="oklch(0.35 0.12 150)" />
-        </g>
-        <text x="380" y="250" textAnchor="middle" className="fill-foreground text-sm font-semibold">
+        <text x="300" y="475" textAnchor="middle" className="fill-foreground text-xs font-medium">
           Turbine
         </text>
-        <text x="380" y="268" textAnchor="middle" className="fill-muted-foreground text-xs">
-          (Spins from water pressure)
-        </text>
-
-        {/* Shaft */}
-        <rect x="425" y="170" width="80" height="20" fill="oklch(0.4 0 0)" stroke="oklch(0.3 0 0)" strokeWidth="2" />
-        <text x="465" y="160" textAnchor="middle" className="fill-foreground text-xs font-medium">
-          Shaft
-        </text>
-
-        {/* Generator */}
-        <rect x="505" y="140" width="100" height="80" fill="oklch(0.6 0.18 30)" stroke="oklch(0.5 0.18 30)" strokeWidth="3" rx="8" />
-        <circle cx="555" cy="180" r="25" fill="oklch(0.7 0.18 30)" stroke="oklch(0.5 0.18 30)" strokeWidth="2" />
-        <path d="M 545 170 L 555 180 L 565 170" stroke="oklch(0.3 0 0)" strokeWidth="2" fill="none" />
-        <path d="M 545 190 L 555 180 L 565 190" stroke="oklch(0.3 0 0)" strokeWidth="2" fill="none" />
-        <text x="555" y="250" textAnchor="middle" className="fill-foreground text-sm font-semibold">
+        <text x="380" y="380" textAnchor="middle" className="fill-foreground text-xs font-medium">
           Generator
         </text>
-        <text x="555" y="268" textAnchor="middle" className="fill-muted-foreground text-xs">
-          (Converts motion to electricity)
-        </text>
-
-        {/* Electricity output */}
-        <line x1="605" y1="160" x2="680" y2="160" stroke="oklch(0.85 0.15 85)" strokeWidth="4" />
-        <line x1="605" y1="200" x2="680" y2="200" stroke="oklch(0.85 0.15 85)" strokeWidth="4" />
-        <path d="M 640 165 L 640 195" stroke="oklch(0.85 0.15 85)" strokeWidth="3" fill="none" />
-        <path d="M 650 165 L 650 195" stroke="oklch(0.85 0.15 85)" strokeWidth="3" fill="none" />
-        <path d="M 660 165 L 660 195" stroke="oklch(0.85 0.15 85)" strokeWidth="3" fill="none" />
-        <text x="720" y="185" className="fill-foreground text-sm font-semibold">
+        <text x="600" y="395" textAnchor="start" className="fill-foreground text-sm font-medium">
           Electricity
         </text>
+        <text x="150" y="470" textAnchor="middle" className="fill-foreground text-xs font-medium">
+          Outflow
+        </text>
 
-        {/* Process flow labels */}
-        <g>
-          <circle cx="125" cy="320" r="20" fill="oklch(0.65 0.15 220)" />
-          <text x="125" y="327" textAnchor="middle" className="fill-white text-sm font-bold">1</text>
-          <text x="125" y="355" textAnchor="middle" className="fill-foreground text-xs font-medium">
-            Water stored
-          </text>
-        </g>
-        <g>
-          <circle cx="260" cy="320" r="20" fill="oklch(0.5 0 0)" />
-          <text x="260" y="327" textAnchor="middle" className="fill-white text-sm font-bold">2</text>
-          <text x="260" y="355" textAnchor="middle" className="fill-foreground text-xs font-medium">
-            Water flows down
-          </text>
-        </g>
-        <g>
-          <circle cx="380" cy="320" r="20" fill="oklch(0.55 0.12 150)" />
-          <text x="380" y="327" textAnchor="middle" className="fill-white text-sm font-bold">3</text>
-          <text x="380" y="355" textAnchor="middle" className="fill-foreground text-xs font-medium">
-            Turbine spins
-          </text>
-        </g>
-        <g>
-          <circle cx="555" cy="320" r="20" fill="oklch(0.6 0.18 30)" />
-          <text x="555" y="327" textAnchor="middle" className="fill-white text-sm font-bold">4</text>
-          <text x="555" y="355" textAnchor="middle" className="fill-foreground text-xs font-medium">
-            Generator produces power
-          </text>
-        </g>
+        {/* Ground */}
+        <line x1="50" y1="480" x2="750" y2="480" stroke="oklch(0.50 0.08 60)" strokeWidth="4" className="dark:stroke-[oklch(0.60_0.08_60)]" />
 
-        {/* Arrow markers */}
+        {/* Arrow marker */}
         <defs>
           <marker
-            id="arrow-water"
+            id="water-arrow"
             markerWidth="10"
             markerHeight="10"
             refX="9"
             refY="3"
             orient="auto"
           >
-            <polygon points="0 0, 10 3, 0 6" fill="oklch(0.65 0.15 220)" />
+            <polygon points="0 0, 10 3, 0 6" fill="oklch(0.60 0.15 220)" className="dark:fill-[oklch(0.70_0.15_220)]" />
           </marker>
         </defs>
       </svg>

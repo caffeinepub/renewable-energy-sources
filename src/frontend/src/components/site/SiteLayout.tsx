@@ -8,11 +8,11 @@ interface SiteLayoutProps {
 
 /**
  * SiteLayout provides the consistent header, navigation, and footer
- * wrapper for all pages in the application.
+ * wrapper for all pages in the application with dark mode support.
  */
 export function SiteLayout({ children }: SiteLayoutProps) {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-background text-foreground transition-colors">
       <SiteNav />
       <main className="flex-1">{children}</main>
       <SiteFooter />

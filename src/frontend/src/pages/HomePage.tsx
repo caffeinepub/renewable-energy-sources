@@ -44,14 +44,14 @@ const energyCards = [
 ];
 
 /**
- * HomePage displays tall vertical interactive image strips side-by-side,
+ * HomePage displays tall vertical interactive image strips side-by-side with dark mode support,
  * each linking to a detailed page about a renewable energy topic.
  */
 export default function HomePage() {
   return (
     <div className="flex min-h-[calc(100vh-4rem)] flex-col">
       {/* Hero Section */}
-      <div className="bg-background py-8 text-center">
+      <div className="bg-background py-8 text-center transition-colors">
         <h1 className="mb-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
           {SITE_NAME}
         </h1>
